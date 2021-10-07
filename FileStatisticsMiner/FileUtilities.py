@@ -1,30 +1,32 @@
 import os
 
-def getListOfFiles(dirName):
-    # create a list of file and sub directories
-    # names in the given directory
-    listOfFile = os.listdir(dirName)
-    allFiles = list()
 
-    print(dirName)
-    # Iterate over all the entries
-    for entry in listOfFile:
-        # Create full path
-        fullPath = os.path.join(dirName, entry)
-        # If entry is a directory then get the list of files in this directory
-        if os.path.isdir(fullPath):
-            # Ignore build directories
-            if not entry.lower() in ['obj']:
-                allFiles = allFiles + getListOfFiles(fullPath)
+def get_file_list(dir_path, label=None):
+    files = list()
+    contents = os.listdir(dir_path)
+
+    for entry in contents:
+        path = os.path.join(dir_path, entry)
+        if os.path.isdir(path):
+            lab = label
+            if lab is None:
+                lab = entry
+
+            # Ignore build and reporting directories
+            if not entry.lower() in ['obj', 'ndependout']:
+                files = files + get_file_list(path, lab)
         else:
-            allFiles.append(fullPath)
+            files.append((path, label))
 
-    return allFiles
+    return files
 
-def isSourceFile(file):
+
+def is_source_file(file_label):
+    file, label = file_label
     name, ext = os.path.splitext(file)
     ext = ext.lower()
-    return ext in ['.cs','.r','.agc','.fs','.js']
+    return ext in ['.cs', '.r', '.agc', '.fs', '.js']
+
 
 def count_lines(path):
     def _make_gen(reader):
@@ -37,12 +39,16 @@ def count_lines(path):
         count = sum(buf.count(b"\n") for buf in _make_gen(f.raw.read))
     return count
 
-def getFileMetrics(sourceFiles):
-    files = []
 
-    for file in sourceFiles:
-        file_lines = count_lines(file)
-        file_details = {'name': file, 'lines': file_lines}
-        files.append(file_details)
+def get_file_metrics(files):
+    results = []
 
-    return files
+    for file, label in files:
+        lines = count_lines(file) # Slow as it actually reads the file
+        path, filename = os.path.split(file)
+        _, ext = os.path.splitext(filename)
+
+        file_details = {'path': path, 'filename': filename, 'ext': ext, 'lines': lines, 'project': label}
+        results.append(file_details)
+
+    return results
