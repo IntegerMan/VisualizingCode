@@ -1,6 +1,8 @@
 # VisualizingCode
 Analysis resources for my "Visualizing Code" talk
 
+![Visualization of the codebase](./diagram.svg)
+
 # Tasks
 
 ## File Analysis
