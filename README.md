@@ -9,9 +9,9 @@ Analysis resources for my "Visualizing Code" talk
 ## File Analysis
 
 - [ ] Get a true nested tree hierarchy going on TreeView
-- [ ] Clean up the labels & visuals on the box plot
-- [ ] Sort the box plot by median
-- [ ] Clean up / color code the lines of code
+- [x] Clean up the labels & visuals on the box plot
+- [x] Sort the box plot by median
+- [ ] Clean up / color code the histogram
 - [ ] Export data to a CSV that can be used in other areas
 
 ## Git Commit Analysis
