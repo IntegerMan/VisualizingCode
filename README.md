@@ -1,7 +1,8 @@
 # VisualizingCode
 Analysis resources for my "Visualizing Code" talk
 
-![Visualization of the codebase](./diagram.svg)
+[![Visualization of the codebase](./diagram.svg)](https://octo-repo-visualization.vercel.app/?repo=integerman%2FVisualizingCode)
+[View interactive Diagram](https://octo-repo-visualization.vercel.app/?repo=integerman%2FVisualizingCode)
 
 # Tasks
 
