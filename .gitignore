@@ -129,3 +129,5 @@ dmypy.json
 .pyre/
 
 FileStatisticsMiner/filesizes.csv
+
+FileStatisticsMiner/RawCommits.csv
