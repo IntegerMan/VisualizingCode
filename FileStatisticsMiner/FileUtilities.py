@@ -40,7 +40,7 @@ def count_lines(path):
     return count
 
 
-def get_file_metrics(files):
+def get_file_metrics(files, root):
     results = []
 
     for file, label in files:
@@ -48,7 +48,14 @@ def get_file_metrics(files):
         path, filename = os.path.split(file)
         _, ext = os.path.splitext(filename)
 
+        path = path.replace(root, '')
+
         file_details = {'path': path, 'filename': filename, 'ext': ext, 'lines': lines, 'project': label}
         results.append(file_details)
 
     return results
+
+
+def get_source_file_metrics(path):
+    source_files = filter(is_source_file, get_file_list(path))
+    return get_file_metrics(list(source_files), path)
