@@ -23,3 +23,9 @@ Analysis resources for my "Visualizing Code" talk
 
 - [ ] Pull data from the local git repository for exploration
 - [ ] Pull data from GitHub for exploration
+
+## GitHub Octo
+
+- [x] Add create-diagram.yml
+- [x] Incorporate diagram into readme
+- [x] Link to dedicated diagram page from readme
