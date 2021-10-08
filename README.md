@@ -1,5 +1,5 @@
 # VisualizingCode
-Analysis resources for my "Visualizing Code" talk
+Analysis resources for my [Visualizing Code](https://www.codemash.org/session-details/?id=281598) talk
 
 [![Visualization of the codebase](./diagram.svg)](https://octo-repo-visualization.vercel.app/?repo=integerman%2FVisualizingCode)
 [View interactive Diagram](https://octo-repo-visualization.vercel.app/?repo=integerman%2FVisualizingCode)
@@ -11,8 +11,9 @@ Analysis resources for my "Visualizing Code" talk
 - [ ] Get a true nested tree hierarchy going on TreeView
 - [x] Clean up the labels & visuals on the box plot
 - [x] Sort the box plot by median
-- [ ] Clean up / color code the histogram
-- [ ] Export data to a CSV that can be used in other areas
+- [x] Clean up the histogram
+- [x] Export data to a CSV that can be used in other areas
+- [ ] Investigate nested circles types of diagrams
 
 ## Git Commit Analysis
 
