@@ -1,7 +1,7 @@
 from pydriller import Repository
 
 
-def analyze_repository(path):
+def get_file_modifications(path):
     """
     Analyzes a git repository and returns a tuple containing the combinations of files modified and path combinations
     :param path: the git repository URL
